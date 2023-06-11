@@ -21,7 +21,13 @@ function Review() {
         }
         console.log('New Review:', newReview)
 
-        
+        axios.post('/feedback', newReview)
+            .then(response => {
+                console.log('data to send', newReview);
+            })
+            .catch((err) => {
+                console.log('error', err);
+            })
 
 
 
@@ -42,6 +48,7 @@ function Review() {
             <p>Support: {newSupport}</p>
             <p>Comments: {newComment}</p>
         </div>
+        <button onClick={handleSubmit}>Submit</button>
 
 
 

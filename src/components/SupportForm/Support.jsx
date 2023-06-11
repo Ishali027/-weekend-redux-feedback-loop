@@ -6,7 +6,7 @@ import { useState } from 'react';
 function SupportForm() {
 
     const dispatch = useDispatch();
-    const [support, setSupport] = useState(0);
+    const [support, setSupport] = useState('');
 
 
     const handleSupportClick = () => {

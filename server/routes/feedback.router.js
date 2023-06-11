@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
 
     let queryText = `INSERT INTO "feedback"("feeling", "understanding", "support", "comments") VALUES ($1, $2, $3, $4);`
 
-    pool.query(queryText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments])
+    pool.query(queryText, [newFeedback.feeling[0], newFeedback.understanding[0], newFeedback.support[0], newFeedback.comments[0]])
         .then(result => {
             console.log('success posting');
             res.sendStatus(201)

@@ -7,14 +7,14 @@ function FeelingForm() {
 
 
     const dispatch = useDispatch();
-    const [feeling, setFeeling] = useState(0);
+    const [feeling, setFeeling] = useState('');
 
     const handleFeelingClick = () => {
         event.preventDefault();
 
         dispatch({
             type: "UPDATE_FEELINGS",
-            payload:  feeling 
+            payload:  feeling
         })
     }
 

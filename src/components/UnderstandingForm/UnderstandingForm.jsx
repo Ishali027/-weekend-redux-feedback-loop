@@ -7,7 +7,7 @@ function UnderstandingForm () {
 
     const dispatch = useDispatch();
 
-    const [understanding, setUnderstanding] = useState(0);
+    const [understanding, setUnderstanding] = useState('');
 
     const handleUnderstandingClick = () => {
         event.preventDefault();
