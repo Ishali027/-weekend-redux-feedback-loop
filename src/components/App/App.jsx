@@ -9,7 +9,7 @@ import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/Support';
 import CommentsForm from '../CommentsForm/CommentsForm';
 import Review from '../Review/Review';
-
+import SubmitNew from '../SubmitNewFeedback/SubmitNewFeedback';
 
 function App() {
 
@@ -50,6 +50,7 @@ function App() {
       <SupportForm />
       <CommentsForm />
       <Review />
+      <SubmitNew />
     </div>
 
   );

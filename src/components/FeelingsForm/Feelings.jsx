@@ -10,12 +10,16 @@ function FeelingForm() {
     const [feeling, setFeeling] = useState('');
 
     const handleFeelingClick = () => {
-        event.preventDefault();
+        if (feeling > 0) {
+            dispatch({
+                type: "UPDATE_FEELINGS",
+                payload:  feeling
+            })
 
-        dispatch({
-            type: "UPDATE_FEELINGS",
-            payload:  feeling
-        })
+        } else {
+            alert('Must enter a number')
+        }
+        
     }
 
     const handleFeelings = (event) => {

@@ -11,11 +11,16 @@ function SupportForm() {
 
     const handleSupportClick = () => {
         event.preventDefault();
+        if( support > 0) {
+            dispatch({
+                type: "UPDATE_SUPPORT",
+                payload: support
+            })
 
-        dispatch({
-            type: "UPDATE_SUPPORT",
-            payload: support
-        })
+        } else {
+            alert('Must enter a number')
+        }
+        
     }
 
     const handleSupport = (event) => {

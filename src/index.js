@@ -20,12 +20,18 @@ const feelingsReducer = (state = [], action) => {
     if(action.type === "UPDATE_FEELINGS") {
         return [...state, action.payload]
     }
+    else if(action.type === "CLEAR") {
+        return [];
+    }
     return state;
 }
 
 const understandingReducer = (state = [], action) => {
     if(action.type === "UPDATE_UNDERSTANDING") {
         return [...state, action.payload]
+    }
+    else if(action.type === "CLEAR") {
+        return [];
     }
     return state;
 }
@@ -34,6 +40,9 @@ const supportReducer = (state = [], action) => {
     if(action.type === "UPDATE_SUPPORT") {
         return [...state, action.payload]
     }
+    else if(action.type === "CLEAR") {
+        return [];
+    }
     return state;
 }
 
@@ -41,6 +50,10 @@ const commentsReducer = (state = [], action) => {
     if(action.type === "UPDATE_COMMENTS") {
         return [...state, action.payload]
     }
+    else if(action.type === "CLEAR") {
+        return [];
+    }
+
     return state;
 }
 

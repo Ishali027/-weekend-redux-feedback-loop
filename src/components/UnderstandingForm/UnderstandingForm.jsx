@@ -11,11 +11,16 @@ function UnderstandingForm () {
 
     const handleUnderstandingClick = () => {
         event.preventDefault();
+        if (understanding > 0) {
+            dispatch({
+                type: "UPDATE_UNDERSTANDING",
+                payload: understanding
+            })
 
-        dispatch({
-            type: "UPDATE_UNDERSTANDING",
-            payload: understanding
-        })
+        } else {
+            alert('Must enter a number')
+        }
+       
     }
 
     const handleUnderstanding = (event) => {
