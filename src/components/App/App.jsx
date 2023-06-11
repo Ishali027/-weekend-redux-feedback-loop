@@ -49,7 +49,7 @@ function App() {
       <UnderstandingForm />
       <SupportForm />
       <CommentsForm />
-      {/* <Review /> */}
+      <Review />
     </div>
 
   );

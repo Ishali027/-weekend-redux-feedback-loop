@@ -9,14 +9,44 @@ function Review() {
     const newFeeling = useSelector(store => store.feelingsReducer);
     const newUnderstanding = useSelector(store => store.understandingReducer);
     const newSupport = useSelector(store => store.supportReducer);
-    const newcomment = useSelector(store => store.commentsReducer);
+    const newComment = useSelector(store => store.commentsReducer);
 
-    
+    const handleSubmit = () => {
+
+        const newReview = {
+            feeling: newFeeling,
+            understanding: newUnderstanding,
+            support: newSupport,
+            comments: newComment
+        }
+        console.log('New Review:', newReview)
+
+        
 
 
 
 
 
+
+    }
+
+
+
+
+    return (
+        <>
+        <div>
+            <h2>Review your feedback</h2>
+            <p>Feelings: {newFeeling}</p>
+            <p>Understanding: {newUnderstanding}</p>
+            <p>Support: {newSupport}</p>
+            <p>Comments: {newComment}</p>
+        </div>
+
+
+
+        </>
+    )
 
 
 
