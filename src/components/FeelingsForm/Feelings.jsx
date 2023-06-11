@@ -13,9 +13,14 @@ function FeelingForm() {
         event.preventDefault();
 
         dispatch({
-            type: "UPDATE_REVIEW",
-            payload: { feeling: feeling }
+            type: "UPDATE_FEELINGS",
+            payload:  feeling 
         })
+    }
+
+    const handleFeelings = (event) => {
+        setFeeling(event.target.value)
+        console.log('feelings level:', feeling );
     }
 
     return (
@@ -26,7 +31,7 @@ function FeelingForm() {
         <input 
         type='number'
         value={feeling}
-        onChange={(event) => setFeeling(event.target.value)}
+        onChange={handleFeelings}
         />
 
         <button onClick={handleFeelingClick}>Next</button>

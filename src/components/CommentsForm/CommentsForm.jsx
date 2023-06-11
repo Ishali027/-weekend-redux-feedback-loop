@@ -13,9 +13,14 @@ function CommentsForm () {
         event.preventDefault();
 
         dispatch({
-            type: "UPDATE_REVIEW",
-            payload: {comments: comments}
+            type: "UPDATE_COMMENTS",
+            payload: comments
         })
+    }
+
+    const handleComments = (event) => {
+        setComments(event.target.value)
+        console.log('Comments:', comments);
     }
 
 
@@ -27,7 +32,7 @@ function CommentsForm () {
             <input 
             type='text'
             value={comments}
-            onChange={(event) => setComments(event.target.value)}
+            onChange={handleComments}
             />
 
             <button onClick={handleCommentsclick}>Next</button>

@@ -13,9 +13,14 @@ function SupportForm() {
         event.preventDefault();
 
         dispatch({
-            type: "UPDATE_REVIEW",
-            payload: {support: support}
+            type: "UPDATE_SUPPORT",
+            payload: support
         })
+    }
+
+    const handleSupport = (event) => {
+        setSupport(event.target.value)
+        console.log('Support level:', support);
     }
 
     return (
@@ -26,7 +31,7 @@ function SupportForm() {
             <input 
             type='number'
             value={support}
-            onChange={(event) => setSupport(event.target.value)}
+            onChange={handleSupport}
             />
             <button onClick={handleSupportClick}>Next</button>
 

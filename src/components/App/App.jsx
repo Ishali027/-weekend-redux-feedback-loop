@@ -8,6 +8,7 @@ import FeelingForm from '../FeelingsForm/Feelings';
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/Support';
 import CommentsForm from '../CommentsForm/CommentsForm';
+import Review from '../Review/Review';
 
 
 function App() {
@@ -48,6 +49,7 @@ function App() {
       <UnderstandingForm />
       <SupportForm />
       <CommentsForm />
+      {/* <Review /> */}
     </div>
 
   );

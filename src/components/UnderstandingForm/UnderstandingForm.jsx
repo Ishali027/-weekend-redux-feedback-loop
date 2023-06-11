@@ -13,9 +13,14 @@ function UnderstandingForm () {
         event.preventDefault();
 
         dispatch({
-            type: "UPDATE_REVIEW",
-            payload: {understanding: understanding}
+            type: "UPDATE_UNDERSTANDING",
+            payload: understanding
         })
+    }
+
+    const handleUnderstanding = (event) => {
+        setUnderstanding(event.target.value)
+        console.log('understanding level:', understanding);
     }
 
     return (
@@ -26,7 +31,7 @@ function UnderstandingForm () {
             <input 
             type='number'
             value={understanding}
-            onChange={(event) => setUnderstanding(event.target.value)}
+            onChange={handleUnderstanding}
             />
 
             <button onClick={handleUnderstandingClick}>Next</button>

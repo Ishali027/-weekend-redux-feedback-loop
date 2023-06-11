@@ -16,8 +16,29 @@ const feedbackReducer = (state = [], action) => {
     return state;
 }
 
-const reviewReducer = (state = [], action) => {
-    if(action.type === "UPDATE_REVIEW") {
+const feelingsReducer = (state = [], action) => {
+    if(action.type === "UPDATE_FEELINGS") {
+        return [...state, action.payload]
+    }
+    return state;
+}
+
+const understandingReducer = (state = [], action) => {
+    if(action.type === "UPDATE_UNDERSTANDING") {
+        return [...state, action.payload]
+    }
+    return state;
+}
+
+const supportReducer = (state = [], action) => {
+    if(action.type === "UPDATE_SUPPORT") {
+        return [...state, action.payload]
+    }
+    return state;
+}
+
+const commentsReducer = (state = [], action) => {
+    if(action.type === "UPDATE_COMMENTS") {
         return [...state, action.payload]
     }
     return state;
@@ -26,7 +47,10 @@ const reviewReducer = (state = [], action) => {
 const reduxStore = createStore(
     combineReducers({
         feedbackReducer,
-        reviewReducer
+        feelingsReducer,
+        understandingReducer,
+        supportReducer,
+        commentsReducer
     }),
     applyMiddleware(logger)
 );
