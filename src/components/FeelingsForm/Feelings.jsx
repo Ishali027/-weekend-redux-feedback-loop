@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 
 
 function FeelingForm() {
@@ -8,6 +9,7 @@ function FeelingForm() {
 
     const dispatch = useDispatch();
     const [feeling, setFeeling] = useState('');
+    const history = useHistory();
 
     const handleFeelingClick = () => {
         if (feeling > 0) {
@@ -15,7 +17,7 @@ function FeelingForm() {
                 type: "UPDATE_FEELINGS",
                 payload:  feeling
             })
-
+            history.push('/understanding')
         } else {
             alert('Must enter a number')
         }

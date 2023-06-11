@@ -1,13 +1,14 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-
+import { useHistory } from 'react-router-dom'
 
 function CommentsForm () {
 
 
     const dispatch = useDispatch();
     const [comments, setComments] = useState('');
+    const history = useHistory();
 
     const handleCommentsclick = () => {
         event.preventDefault();
@@ -16,6 +17,7 @@ function CommentsForm () {
             type: "UPDATE_COMMENTS",
             payload: comments
         })
+        history.push('/review')
     }
 
     const handleComments = (event) => {

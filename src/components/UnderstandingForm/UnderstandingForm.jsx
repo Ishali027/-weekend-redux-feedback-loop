@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 import React from 'react';
+import { useHistory } from 'react-router-dom'
 
 
 function UnderstandingForm () {
@@ -8,6 +9,7 @@ function UnderstandingForm () {
     const dispatch = useDispatch();
 
     const [understanding, setUnderstanding] = useState('');
+    const history = useHistory();
 
     const handleUnderstandingClick = () => {
         event.preventDefault();
@@ -16,7 +18,7 @@ function UnderstandingForm () {
                 type: "UPDATE_UNDERSTANDING",
                 payload: understanding
             })
-
+            history.push('/support')
         } else {
             alert('Must enter a number')
         }

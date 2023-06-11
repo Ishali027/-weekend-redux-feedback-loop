@@ -8,7 +8,7 @@ import FeelingForm from '../FeelingsForm/Feelings';
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/Support';
 import CommentsForm from '../CommentsForm/CommentsForm';
-import Review from '../Review/Review';
+import Review from '../ReviewForm/Review';
 import SubmitNew from '../SubmitNewFeedback/SubmitNewFeedback';
 
 function App() {
@@ -45,12 +45,32 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
+      <Router>
+        <Route exact path='/'>
       <FeelingForm />
+      </Route>
+
+      <Route exact path='/understanding'>
       <UnderstandingForm />
+      </Route>
+
+      <Route exact path='/support'>
       <SupportForm />
+      </Route>
+
+      <Route exact path ='/comments'>
       <CommentsForm />
+      </Route>
+
+        <Route exact path ='/review'>
       <Review />
+      </Route>
+
+      <Route exact path='/SubmitNew'>
       <SubmitNew />
+      </Route>
+
+      </Router>
     </div>
 
   );

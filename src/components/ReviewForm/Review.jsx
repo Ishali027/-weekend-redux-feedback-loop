@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
-
+import { useHistory } from "react-router-dom"
 
 
 
@@ -10,7 +10,7 @@ function Review() {
     const newUnderstanding = useSelector(store => store.understandingReducer);
     const newSupport = useSelector(store => store.supportReducer);
     const newComment = useSelector(store => store.commentsReducer);
-
+    const history = useHistory();
     const handleSubmit = () => {
 
         const newReview = {
@@ -23,14 +23,15 @@ function Review() {
 
         axios.post('/feedback', newReview)
             .then(response => {
+                history.push('/SubmitNew')
+
                 console.log('data to send', newReview);
             })
             .catch((err) => {
                 console.log('error', err);
             })
 
-
-
+            
 
 
 

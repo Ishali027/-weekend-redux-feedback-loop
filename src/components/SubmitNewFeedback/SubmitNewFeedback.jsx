@@ -1,12 +1,12 @@
 import { useDispatch } from "react-redux";
-
+import { useHistory } from "react-router-dom"
 
 
 
 function SubmitNew() {
 
     const dispatch = useDispatch();
-
+    const history = useHistory();
 
     const resetAllReducers = () => {
 
@@ -14,6 +14,7 @@ function SubmitNew() {
             type: "CLEAR",
             payload: []
         })
+        history.push('/')
     }
 
 
